@@ -1,7 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'bootstrap/base.html' %}
 
 {% block title %}Home{% endblock title %}
-
 
 {% block content %}
     <section class="home d-flex flex-column">
@@ -13,19 +12,14 @@
                 <h3><span>Popular Accessories</span></h3>
             </div>
         </div>
-        <div class="home-card">
-    <div class="home-cardss">
+        <div class="home-cardss d-flex gap-4">
             {% for product in work %}
-                <div class="home-card">
-                    <div class="card-img-container">
-                        <img src="{{ url_for('get_work_image', work_id=product.id) }}" 
-                             class="card-img" 
-                             alt="{{ product.title }}"
-                             loading="lazy">
-                    </div>
+                <a href="{{ work.title }}" class="home-card">
+                    <img src="{{ url_for('get_product_image', work_id=product.id) }}" class="card-img" alt="картинка">
                     <h5 class="title-card">{{ product.title }}</h5>
-                    <h5 class="title-card">{{ product.content }}</h5>
-                </div>
+                    <h5 class="title-card">привет</h5>
+
+                </a>
             {% endfor %}
         </div>
     </section>

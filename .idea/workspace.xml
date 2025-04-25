@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="first">
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/main/product/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="ne fakt chto bydet tak">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/work.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/work.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/blogs.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/tst/blogs.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,11 +48,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gta\PycharmProjects\Site\db\tst" />
       <recent name="C:\Users\gta\PycharmProjects\Site\templates" />
       <recent name="C:\Users\gta\PycharmProjects\Site" />
       <recent name="C:\Users\gta\PycharmProjects\Site\templates\main" />
       <recent name="C:\Users\gta\PycharmProjects\Site\templates\main\product" />
-      <recent name="C:\Users\gta\PycharmProjects\Site\templates\main\index" />
     </key>
   </component>
   <component name="RunManager" selected="Python.server (1)">
@@ -172,8 +169,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.server (1)" />
-        <item itemvalue="Python.server (1)" />
         <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.server (1)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.server" />
       </list>
@@ -203,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744904416835</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ne fakt chto bydet tak">
+      <option name="closed" value="true" />
+      <created>1745448974808</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1745448974808</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,6 +224,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first" />
-    <option name="LAST_COMMIT_MESSAGE" value="first" />
+    <MESSAGE value="ne fakt chto bydet tak" />
+    <option name="LAST_COMMIT_MESSAGE" value="ne fakt chto bydet tak" />
   </component>
 </project>
