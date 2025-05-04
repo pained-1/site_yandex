@@ -1,0 +1,167 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Стили для header */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.header-container {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.header-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.header-profile a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Стили для рамок */
+.frame1, .frame2, .frame3, .frame4 {
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.frame1 {
+    top: 0;
+    left: 0;
+}
+
+.frame2 {
+    top: 0;
+    right: 0;
+}
+
+.frame3 {
+    bottom: 0;
+    left: 0;
+}
+
+.frame4 {
+    bottom: 0;
+    right: 0;
+}
+
+    .home-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+        width: 250px; /* Фиксированная ширина карточки */
+    }
+    
+    .card-img-container {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    
+    .card-img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* Сохраняет пропорции изображения */
+    }
+    
+    .title-card {
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    .home-cardss {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+/* Стили для секций */
+.home {
+    padding: 20px;
+}
+
+.home-title {
+    margin-bottom: 30px;
+}
+
+.home-btn {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.rec-title h3 {
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .home-card {
+        width: 150px;
+    }
+    
+    .card-img-container {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .header-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .header-list {
+        margin-bottom: 10px;
+    }
+}
+.logogothic {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 200px;
+    z-index: -1;
+}
+
+.subtitlee {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 300px;
+    z-index: -1;
+}
+
+\

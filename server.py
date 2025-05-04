@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 from data import db_session
-from data.work import Work
+from data.product import Product
 import sqlite3
 from flask import abort, send_file
 import io
@@ -22,14 +22,14 @@ def index():
 @app.route("/iblan")
 def iblan():
     db_sess = db_session.create_session()
-    work = db_sess.query(Work)
-    return render_template('index.html', work=work)
+    work = db_sess.query(Product)
+    return render_template('index.html', products=work)
 
 
 @app.route('/work_image/<int:work_id>')
 def get_work_image(work_id):
     db_sess = db_session.create_session()
-    work = db_sess.query(Work).get(work_id)
+    work = db_sess.query(Product).get(work_id)
 
     if not work or not work.image:
         # Можно вернуть изображение-заглушку
@@ -58,6 +58,17 @@ def test_css():
         2. URL <a href="/static/css/base.css">/static/css/base.css</a> открывает CSS-код
     </body>
     '''
+
+@app.route('/product_card/<name>')
+def product_card(name):
+    db_sess = db_session.create_session()
+    work = db_sess.query(Product)
+    # names = db_sess.query(Product).filter(Product.title == name).all()
+    names = ""
+    for titl in work:
+        if titl.title == name:
+            names = titl
+    return render_template('detail.html', product=names)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))

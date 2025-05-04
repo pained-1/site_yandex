@@ -17,8 +17,10 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
     age = sqlalchemy.Column(sqlalchemy.Integer)
     email = sqlalchemy.Column(sqlalchemy.String, unique=True)
     hashed_password = sqlalchemy.Column(sqlalchemy.String)
+    money = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
+    total_spent = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
     modified_date = sqlalchemy.Column(sqlalchemy.DateTime)
-    news = orm.relationship("Work", back_populates='user')
+    news = orm.relationship("Product", back_populates='user')
 
     def set_password(self, password):
         self.hashed_password = generate_password_hash(password)

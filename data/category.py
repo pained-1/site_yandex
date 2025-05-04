@@ -6,8 +6,8 @@ class Category(SqlAlchemyBase):
     association_table = sqlalchemy.Table(
         'association',
         SqlAlchemyBase.metadata,
-        sqlalchemy.Column('work', sqlalchemy.Integer,
-                          sqlalchemy.ForeignKey('work.id')),
+        sqlalchemy.Column('products', sqlalchemy.Integer,
+                          sqlalchemy.ForeignKey('products.id')),
         sqlalchemy.Column('category', sqlalchemy.Integer,
                           sqlalchemy.ForeignKey('category.id'))
     )

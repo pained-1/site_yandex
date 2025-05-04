@@ -2,7 +2,7 @@ import flask
 from flask import jsonify, make_response, Flask, request
 from flask_restful import reqparse, abort, Api, Resource
 from . import db_session
-from .work import Work
+from .product import Product
 
 blueprint = flask.Blueprint(
     'news_api',
@@ -14,7 +14,7 @@ api = Api(app)
 
 def abort_if_news_not_found(news_id):
     session = db_session.create_session()
-    work = session.query(Work).get(news_id)
+    work = session.query(Product).get(news_id)
     if not work:
         abort(404, message=f"News {news_id} not found")
 
@@ -22,14 +22,14 @@ class NewsResource(Resource):
     def get(self, work_id):
         abort_if_news_not_found(work_id)
         session = db_session.create_session()
-        work = session.query(Work).get(work_id)
+        work = session.query(Product).get(work_id)
         return jsonify({'work': work.to_dict(
             only=('title', 'content', 'user_id', 'is_private'))})
 
     def delete(self, news_id):
         abort_if_news_not_found(news_id)
         session = db_session.create_session()
-        work = session.query(Work).get(news_id)
+        work = session.query(Product).get(news_id)
         session.delete(work)
         session.commit()
         return jsonify({'success': 'OK'})
@@ -44,14 +44,14 @@ parser.add_argument('user_id', required=True, type=int)
 class NewsListResource(Resource):
     def get(self):
         session = db_session.create_session()
-        work = session.query(Work).all()
-        return jsonify({'work': [item.to_dict(
+        work = session.query(Product).all()
+        return jsonify({'products': [item.to_dict(
             only=('title', 'content', 'user.name')) for item in work]})
 
     def post(self):
         args = parser.parse_args()
         session = db_session.create_session()
-        work = Work(
+        work = Product(
             title=args['title'],
             content=args['content'],
             user_id=args['user_id'],
@@ -75,7 +75,7 @@ class NewsListResource(Resource):
 @blueprint.route('/api/jobs')
 def get_news():
     db_sess = db_session.create_session()
-    work = db_sess.query(Work).all()
+    work = db_sess.query(Product).all()
     return jsonify(
         {
             'work':
@@ -91,7 +91,7 @@ def get_news():
 @blueprint.route('/api/jobs/<int:news_id>', methods=['GET'])
 def get_one_news(news_id):
     db_sess = db_session.create_session()
-    work = db_sess.query(Work).get(news_id)
+    work = db_sess.query(Product).get(news_id)
     if not work:
         return make_response(jsonify({'error': 'Not found'}), 404)
     return jsonify(
@@ -110,7 +110,7 @@ def add_jobs():
                  ['title', 'content', 'experience', 'colab', 'user_id', 'is_private']):
         return make_response(jsonify({'error': 'Bad request'}), 400)
     db_sess = db_session.create_session()
-    work = Work(
+    work = Product(
         title=request.json['title'],
         content=request.json['content'],
         experience=request.json['experience'],
@@ -126,7 +126,7 @@ def add_jobs():
 @blueprint.route('/api/delete_jobs/<int:news_id>', methods=['DELETE'])
 def delete_news(news_id):
     db_sess = db_session.create_session()
-    work = db_sess.query(Work).get(news_id)
+    work = db_sess.query(Product).get(news_id)
     if not work:
         return make_response(jsonify({'error': 'Not found'}), 404)
     db_sess.delete(work)
@@ -137,7 +137,7 @@ def delete_news(news_id):
 @blueprint.route('/api/redact_jobs/<int:news_id>', methods=['PUT'])
 def redact_news(news_id):
     db_sess = db_session.create_session()
-    work = db_sess.query(Work).get(news_id)
+    work = db_sess.query(Product).get(news_id)
     if not work:
         return make_response(jsonify({'error': 'Not found'}), 404)
     if not request.json:

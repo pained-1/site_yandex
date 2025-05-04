@@ -14,18 +14,22 @@
             </div>
         </div>
         <div class="home-card">
-    <div class="home-cardss">
-            {% for product in work %}
-                <div class="home-card">
-                    <div class="card-img-container">
-                        <img src="{{ url_for('get_work_image', work_id=product.id) }}" 
-                             class="card-img" 
-                             alt="{{ product.title }}"
-                             loading="lazy">
+    <div class="home-cards d-flex gap-4">
+            {% for product in products %}
+                {% if product.is_popular == 1 %}
+                    <a href="{{ url_for('product_card', name=product.title) }}" class="home-card">
+                        <div class="card-img-container">
+                            <img src="{{ url_for('get_work_image', work_id=product.id) }}"
+                                 class="card-img"
+                                 alt="{{ product.title }}"
+                                 loading="lazy">
                     </div>
                     <h5 class="title-card">{{ product.title }}</h5>
-                    <h5 class="title-card">{{ product.content }}</h5>
-                </div>
+                    <h5 class="title-card">{{ product.price }} руб</h5>
+                </a>
+
+            {% endif %}
+
             {% endfor %}
         </div>
     </section>
