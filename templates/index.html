@@ -6,15 +6,15 @@
 {% block content %}
     <section class="home d-flex flex-column">
         <div class="home-title d-flex flex-column align-items-center">
-            <a href="#" class="home-btn mt-4">ALL PRODUCTS</a>
+            <a href="/shop" class="home-btn mt-4">ALL PRODUCTS</a>
         </div>
         <div class="home-recomendation">
             <div class="rec-title mb-4">
-                <h3><span>Popular Accessories</span></h3>
+                <h3><span>Popular Accessories<span></h3>
             </div>
         </div>
         <div class="home-card">
-    <div class="home-cards d-flex gap-4">
+    <div class="home-cards d-flex gap-4 ">
             {% for product in products %}
                 {% if product.is_popular == 1 %}
                     <a href="{{ url_for('product_card', name=product.title) }}" class="home-card">
@@ -24,8 +24,9 @@
                                  alt="{{ product.title }}"
                                  loading="lazy">
                     </div>
-                    <h5 class="title-card">{{ product.title }}</h5>
-                    <h5 class="title-card">{{ product.price }} руб</h5>
+                    <h5 class="title-card">{{ product.title }} <br>
+                        <br>
+                     {{ product.price }} руб</h5>
                 </a>
 
             {% endif %}

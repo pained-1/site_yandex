@@ -1,19 +1,22 @@
 import os
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 from data import db_session
 from data.product import Product
 import sqlite3
+from flask_paginate import Pagination, get_page_parameter
 from flask import abort, send_file
 import io
 import imghdr
-
+from flask_optional_routes import OptionalRoutes
 app = Flask(__name__, static_folder='static')
+optional = OptionalRoutes(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 db = SQLAlchemy()
 db.init_app(app)
+
 bootstrap = Bootstrap(app)
 @app.route("/")
 def index():
@@ -69,6 +72,22 @@ def product_card(name):
         if titl.title == name:
             names = titl
     return render_template('detail.html', product=names)
+
+@optional.routes('/shop/<category_slug>?/')
+def shop(category_slug=None):
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    db_sess = db_session.create_session()
+    categories = db_sess.query(Product.category).all()
+    categories_list = [name[0] for name in categories]
+    a = set()
+    for i in categories_list:
+        a.add(i)
+    if category_slug:
+        products_query = db_sess.query(Product).filter(Product.category==category_slug)
+    else:
+        products_query = db_sess.query(Product)
+    print(products_query)
+    return render_template('list.html', category=category_slug, categories=a,products=products_query)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
