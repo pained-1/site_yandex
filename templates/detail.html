@@ -11,9 +11,16 @@
         </div>
         <div class="detail-description">
             <h2>{{ product.title }}</h2>
-            <h3>price: {{ product.price }}</h3>
+            <h3>{% if product.discount != 0 %}
+                        <div class="cart-discount d-flex gap-2">
+                            <p class="line">{{ product.price }} Руб</p>
+                            <p>{{ product.price | price_discount(product.discount) }} руб</p>
+                        </div>
+                    {% else %}
+                        <p class="cart-discount">{{ product.price }} Руб</p>
+                    {% endif %}</h3>
             <h3>Category: {{ product.category }}</h3>
-            <a href="#" class="cart-btn d-flex align-items-center jusctify-content-center">add to cart</a>
+            <a href="#" class="cart-btn d-flex align-items-center justify-content-center">Add to cart</a>
         </div>
     </div>
 {% endblock content %}

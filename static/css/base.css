@@ -154,9 +154,9 @@ input:focus {
 }
 
 .title-card {
-    max-width: 185px;
-    margin-top: 20px;
-    min-height: 70px;
+    max-width: 150px;
+    margin-top: 10px;
+    min-height: 10px;
 }
 
 
@@ -262,7 +262,7 @@ input:focus {
 
 .card-discount {
     margin-top: -10px;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .card-discount .price {

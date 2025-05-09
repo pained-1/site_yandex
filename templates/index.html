@@ -24,9 +24,15 @@
                                  alt="{{ product.title }}"
                                  loading="lazy">
                     </div>
-                    <h5 class="title-card">{{ product.title }} <br>
-                        <br>
-                     {{ product.price }} руб</h5>
+                    <h5 class="title-card">{{ product.title }}</h5><br>
+                    <h5>{% if product.discount != 0 %}
+                        <div class="cart-discount d-flex gap-2">
+                            <p class="line">{{ product.price }} Руб</p>
+                            <p>{{ product.price | price_discount(product.discount) }} руб</p>
+                        </div>
+                    {% else %}
+                        <p class="cart-discount">{{ product.price }} Руб</p>
+                    {% endif %}</h5>
                 </a>
 
             {% endif %}

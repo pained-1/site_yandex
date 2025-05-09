@@ -29,6 +29,14 @@
                             <a href="{{ url_for('product_card', name=product.title) }}" class="home-card d-flex flex-column align-items-center text-center">
                                 <img src="{{ url_for('get_work_image', work_id=product.id) }}" class="card-img" alt="">
                                 <h5 class="title-card">{{ product.title }}</h5>
+                                <h5>{% if product.discount != 0 %}
+                        <div class="cart-discount d-flex gap-2">
+                            <p class="line">{{ product.price }} Руб</p>
+                            <p>{{ product.price | price_discount(product.discount) }} руб</p>
+                        </div>
+                    {% else %}
+                        <p class="cart-discount">{{ product.price }} Руб</p>
+                    {% endif %}</h5>
                             </a>
                         </div>
                     {% endfor %}
@@ -36,5 +44,4 @@
             </div>
         </div>
     </div>
-
 {% endblock content %}

@@ -5,6 +5,7 @@ from flask_bootstrap import Bootstrap
 from data import db_session
 from data.product import Product
 import sqlite3
+
 from flask_paginate import Pagination, get_page_parameter
 from flask import abort, send_file
 import io
@@ -16,8 +17,14 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 db = SQLAlchemy()
 db.init_app(app)
-
 bootstrap = Bootstrap(app)
+def calculate_discount(price, discount):
+    if discount and discount > 0:
+        return price * (1 - discount/100)
+    return price
+@app.template_filter('price_discount')
+def price_discount_filter(price, discount):
+    return calculate_discount(price, discount)
 @app.route("/")
 def index():
     return render_template('base.html')
@@ -36,7 +43,7 @@ def get_work_image(work_id):
 
     if not work or not work.image:
         # Можно вернуть изображение-заглушку
-        return send_file('static/img/no-image.png', mimetype='image/png')
+        return send_file('static/img/noimage.jpg', mimetype='image/png')
 
     # Определяем тип изображения
     image_type = imghdr.what(None, h=work.image)
@@ -75,19 +82,20 @@ def product_card(name):
 
 @optional.routes('/shop/<category_slug>?/')
 def shop(category_slug=None):
-    page = request.args.get(get_page_parameter(), type=int, default=1)
+    # page = request.args.get('page', type=int, default=1)
+    # per_page = 12
     db_sess = db_session.create_session()
     categories = db_sess.query(Product.category).all()
     categories_list = [name[0] for name in categories]
-    a = set()
+    all_categories = set()
     for i in categories_list:
-        a.add(i)
+        all_categories.add(i)
     if category_slug:
         products_query = db_sess.query(Product).filter(Product.category==category_slug)
     else:
         products_query = db_sess.query(Product)
-    print(products_query)
-    return render_template('list.html', category=category_slug, categories=a,products=products_query)
+    # pages = db_sess.query(Product).paginate(page=page, per_page=1)
+    return render_template('list.html', category=category_slug, categories=all_categories,products=products_query)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
