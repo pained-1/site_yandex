@@ -1,5 +1,4 @@
 import os
-
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, render_template, request, redirect, abort, send_file
