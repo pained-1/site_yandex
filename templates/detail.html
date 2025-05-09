@@ -7,7 +7,7 @@
 {% block content %}
     <div class="detail-product d-flex">
         <div class="detail-img">
-            <img src="{% if product.image %}{{ url_for('get_work_image', work_id=product.id) }}{% else %}{{ url_for('static', filename='img/noimage.jpg')}}{% endif %}" alt="" class="detail-img">
+            <img src="{% if product.image %}{{ url_for('get_work_image', work_id=product.id) }}{% else %}{{ url_for('static', filename='img/noimage.jpg')}}{% endif %}" alt="" class="detail-image">
         </div>
         <div class="detail-description">
             <h2>{{ product.title }}</h2>
@@ -20,6 +20,7 @@
                         <p class="cart-discount">{{ product.price }} Руб</p>
                     {% endif %}</h3>
             <h3>Category: {{ product.category }}</h3>
+            <h3>about:<br> {{ product.description }}</h3>
             <a href="#" class="cart-btn d-flex align-items-center justify-content-center">Add to cart</a>
         </div>
     </div>
