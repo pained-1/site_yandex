@@ -34,12 +34,9 @@ def calculate_discount(price, discount):
 @app.template_filter('price_discount')
 def price_discount_filter(price, discount):
     return calculate_discount(price, discount)
-@app.route("/")
-def index():
-    return render_template('base.html')
 
-@app.route("/iblan")
-def iblan():
+@app.route("/")
+def home():
     db_sess = db_session.create_session()
     work = db_sess.query(Product)
     return render_template('index.html', products=work)
@@ -154,7 +151,7 @@ def login():
         user = db_sess.query(User).filter(User.email == form.email.data).first()
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
-            return redirect("/iblan")
+            return redirect("/")
         return render_template('login.html',
                                message="Неправильный логин или пароль",
                                form=form)
@@ -165,7 +162,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return redirect("/iblan")
+    return redirect("/")
 
 @app.route('/profile')
 def profile():

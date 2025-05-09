@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="регестрация и вход пользователя в аккаунт,а также его страничка профиля">
+    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="другая база данных и небольшие правки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/blogs.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/blogs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/tst/blogs.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/tst/blogs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746804547680</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="другая база данных и небольшие правки">
+      <option name="closed" value="true" />
+      <created>1746805613153</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1746805613153</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -300,6 +306,7 @@
     <MESSAGE value="есть сортировка товаров" />
     <MESSAGE value="сделанна скидка товаров" />
     <MESSAGE value="регестрация и вход пользователя в аккаунт,а также его страничка профиля" />
-    <option name="LAST_COMMIT_MESSAGE" value="регестрация и вход пользователя в аккаунт,а также его страничка профиля" />
+    <MESSAGE value="другая база данных и небольшие правки" />
+    <option name="LAST_COMMIT_MESSAGE" value="другая база данных и небольшие правки" />
   </component>
 </project>
