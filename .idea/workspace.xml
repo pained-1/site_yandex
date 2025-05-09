@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="есть сортировка товаров">
+    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="сделанна скидка товаров">
+      <change afterPath="$PROJECT_DIR$/forms/product.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/blogs.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/blogs.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/work.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746488645901</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="сделанна скидка товаров">
+      <option name="closed" value="true" />
+      <created>1746749928175</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1746749928175</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -284,6 +294,7 @@
     <MESSAGE value="basee.css чуть подправлен и сделанна картинка у тестового товара" />
     <MESSAGE value="есть карточка товара" />
     <MESSAGE value="есть сортировка товаров" />
-    <option name="LAST_COMMIT_MESSAGE" value="есть сортировка товаров" />
+    <MESSAGE value="сделанна скидка товаров" />
+    <option name="LAST_COMMIT_MESSAGE" value="сделанна скидка товаров" />
   </component>
 </project>

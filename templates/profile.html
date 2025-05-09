@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Мой профиль{% endblock %}
+
+{% block content %}
+<div class="user-profile">
+    <h1 class="profile-title">Личные данные</h1>
+
+    <div class="profile-form">
+        <div class="form-row">
+            <div class="form-label">Фамилия:</div>
+            <div class="form-value">{{ user.surname }}</div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-label">Имя:</div>
+            <div class="form-value">{{ user.name }}</div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-label">Email:</div>
+            <div class="form-value">{{ user.email }}</div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-label">Возраст:</div>
+            <div class="form-value">{{ user.age }} лет</div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-label">Всего потрачено:</div>
+            <div class="form-value">
+                {% if user.total_spent %} {{ user.total_spent }} руб
+                {% else %} 0 руб
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <a href="{{ url_for('logout') }}" class="logout-btn">Выйти</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

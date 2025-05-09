@@ -11,5 +11,4 @@ class RegisterForm(FlaskForm):
     surname = StringField('Фамилия', validators=[DataRequired()])
     age = StringField('Возраст', validators=[DataRequired()])
     about = TextAreaField("Немного о себе")
-    work = TextAreaField("Где вы работаете",validators=[DataRequired()])
     submit = SubmitField('Войти')

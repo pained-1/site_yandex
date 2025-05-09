@@ -30,7 +30,13 @@
                 <a href="/"></a>
             </div>
             <div class="header-profile">
-                <a href="#" class="m-3">LOGIN</a>
+                {% if current_user.is_authenticated %}
+			    <a class="m-3" href="/profile">{{ current_user.name }}</a>
+		        {% else %}
+                <p>
+				<a href="/login" class="m-3">Login</a>
+			    </p>
+		        {% endif %}
             </div>
         </div>
 
