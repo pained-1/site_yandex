@@ -14,6 +14,18 @@
     {% block styles %}{% endblock %}
 </head>
 <body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
     <header class="header sticky-top">
         <div class="header-container d-flex">
             <navbar class="header-nav pt-4">
@@ -29,8 +41,9 @@
             <div class="header-logo">
                 <a href="/"></a>
             </div>
-            <div class="header-profile">
+            <div class="header-profile d-flex gap-2 align-items-start">
                 {% if current_user.is_authenticated %}
+                <a href="/cart"><img src="{{ url_for('static', filename='img/cart.png') }}" class="grob " alt=""></a>
 			    <a class="m-3" href="/profile">{{ current_user.name }}</a>
 		        {% else %}
                 <p>

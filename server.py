@@ -1,7 +1,7 @@
 import os
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, render_template, request, redirect, abort, send_file
+from flask import Flask, render_template, request, redirect, abort, send_file, url_for, flash
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import PasswordField, SubmitField, EmailField, BooleanField
@@ -9,6 +9,7 @@ from wtforms.validators import DataRequired
 from data import db_session
 from data.product import Product
 from data.users import User
+from data.cart import Cart
 import sqlite3
 from flask_paginate import Pagination, get_page_parameter
 import io
@@ -26,18 +27,23 @@ bootstrap = Bootstrap(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+
 def calculate_discount(price, discount):
     if discount and discount > 0:
-        return price * (1 - discount/100)
+        return price * (1 - discount / 100)
     return price
+
+
 @app.template_filter('price_discount')
 def price_discount_filter(price, discount):
     return calculate_discount(price, discount)
+
 
 @app.route("/")
 def home():
     db_sess = db_session.create_session()
     work = db_sess.query(Product)
+    db_sess.close()
     return render_template('index.html', products=work)
 
 
@@ -56,34 +62,26 @@ def get_work_image(work_id):
 
     # Создаем файлоподобный объект из BLOB-данных
     image_io = io.BytesIO(work.image)
-
+    db_sess.close()
     return send_file(
         image_io,
         mimetype=mimetype,
         as_attachment=False,
         download_name=f'work_{work_id}.{image_type}' if image_type else 'work_image'
     )
-@app.route('/test-css')
-def test_css():
-    return '''
-    <link rel="stylesheet" href="/static/css/base.css">
-    <body style="padding: 50px;">
-        Если фон красный - CSS работает. Иначе проверьте:<br>
-        1. Файл static/css/base.css существует<br>
-        2. URL <a href="/static/css/base.css">/static/css/base.css</a> открывает CSS-код
-    </body>
-    '''
+
 
 @app.route('/product_card/<name>')
 def product_card(name):
     db_sess = db_session.create_session()
-    work = db_sess.query(Product)
-    # names = db_sess.query(Product).filter(Product.title == name).all()
-    names = ""
-    for titl in work:
-        if titl.title == name:
-            names = titl
-    return render_template('detail.html', product=names)
+    product = db_sess.query(Product).filter(Product.title == name).first()
+    db_sess.close()
+
+    if not product:
+        abort(404)  # Вернёт 404 если товар не найден
+    db_sess.close()
+    return render_template('detail.html', product=product)
+
 
 @optional.routes('/shop/<category_slug>?/')
 def shop(category_slug=None):
@@ -96,11 +94,12 @@ def shop(category_slug=None):
     for i in categories_list:
         all_categories.add(i)
     if category_slug:
-        products_query = db_sess.query(Product).filter(Product.category==category_slug)
+        products_query = db_sess.query(Product).filter(Product.category == category_slug)
     else:
         products_query = db_sess.query(Product)
     # pages = db_sess.query(Product).paginate(page=page, per_page=1)
-    return render_template('list.html', category=category_slug, categories=all_categories,products=products_query)
+    db_sess.close()
+    return render_template('list.html', category=category_slug, categories=all_categories, products=products_query)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -125,15 +124,18 @@ def reqister():
         user.set_password(form.password.data)
         db_sess.add(user)
         db_sess.commit()
+        db_sess.close()
         return redirect('/login')
     return render_template('register.html', title='Регистрация', form=form)
-
 
 
 @login_manager.user_loader
 def load_user(user_id):
     db_sess = db_session.create_session()
-    return db_sess.query(User).get(user_id)
+    ret = db_sess.query(User).get(user_id)
+    db_sess.close()
+    return ret
+
 
 class LoginForm(FlaskForm):
     email = EmailField('Почта', validators=[DataRequired()])
@@ -148,9 +150,12 @@ def login():
     if form.validate_on_submit():
         db_sess = db_session.create_session()
         user = db_sess.query(User).filter(User.email == form.email.data).first()
+
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
+            db_sess.close()
             return redirect("/")
+        db_sess.close()
         return render_template('login.html',
                                message="Неправильный логин или пароль",
                                form=form)
@@ -163,12 +168,101 @@ def logout():
     logout_user()
     return redirect("/")
 
+
 @app.route('/profile')
+@login_required
 def profile():
     return render_template('profile.html', user=current_user)
+
+
+@app.route("/add_to_cart/<int:item_id>")
+def add_to_cart(item_id):
+    db_sess = db_session.create_session()
+    try:
+        product = db_sess.query(Product).get(item_id)
+        item_to_add = db_sess.query(Product).get(item_id)
+        item_exists = db_sess.query(Cart).filter(Cart.product_link == item_id,
+                                                 Cart.customer_link == current_user.id).first()
+        # for item in item_exists:
+        #     print(item.id)
+        if item_exists:
+            item_exists.quantity += 1
+            db_sess.commit()
+        else:
+            new_cart_item = Cart()
+            new_cart_item.quantity = 1
+            new_cart_item.product_link = item_to_add.id
+            new_cart_item.customer_link = current_user.id
+            db_sess.add(new_cart_item)
+            db_sess.commit()
+        flash(f'Товар "{product.title}" добавлен в корзину', 'success')
+        return redirect(url_for('product_card', name=product.title))
+    except Exception as e:
+        db_sess.rollback()
+        flash('Ошибка при добавлении в корзину', 'error')
+        return redirect(url_for('/'))
+
+    finally:
+        db_sess.close()
+
+
+@app.route("/cart")
+@login_required
+def cart():
+    db_sess = db_session.create_session()
+    cart = db_sess.query(Cart).filter(Cart.customer_link == current_user.id).all()
+    amount = 0
+    for item in cart:
+        amount += price_discount_filter(item.product.price, item.product.discount) * item.quantity
+    db_sess.close()
+    return render_template('cart.html', cart=cart, amount=amount, total=amount)
+
+
+@app.route('/update_cart/<int:item_id>', methods=['POST'])
+@login_required
+def update_cart(item_id):
+    action = request.form.get('action')
+    db_sess = db_session.create_session()
+
+    try:
+        cart_item = db_sess.query(Cart).filter_by(
+            id=item_id,
+            customer_link=current_user.id
+        ).first()
+
+        if cart_item:
+            if action == 'increase':
+                cart_item.quantity += 1
+            elif action == 'decrease' and cart_item.quantity > 1:
+                cart_item.quantity -= 1
+
+            db_sess.commit()
+            db_sess.close()
+    except Exception as e:
+        db_sess.rollback()
+        flash('Ошибка обновления', 'error')
+    finally:
+        db_sess.close()
+
+    return redirect(url_for('cart'))
+
+
+@app.route('/remove_from_cart/<int:item_id>', methods=['POST'])
+@login_required
+def remove_from_cart(item_id):
+    db_sess = db_session.create_session()
+    cart_item = db_sess.query(Cart).filter_by(id=item_id, customer_link=current_user.id).first()
+
+    if cart_item:
+        db_sess.delete(cart_item)
+        db_sess.commit()
+        flash('Товар удален из корзины', 'success')
+
+    db_sess.close()
+    return redirect(url_for('cart'))
 
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     db_session.global_init('db/blogs.db')
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', debug=True, port=port, threaded=True)

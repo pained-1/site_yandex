@@ -4,10 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="fix">
+    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="fix(без корзины)">
+      <change afterPath="$PROJECT_DIR$/templates/cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/blogs.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/blogs.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/product/detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Новая папка/1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Новая папка/auto_answer.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Новая папка/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Новая папка/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Новая папка/news.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Новая папка/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Новая папка/sqlwork.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Новая папка/work.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +60,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\gta\PycharmProjects\Site\db\tst" />
       <recent name="C:\Users\gta\PycharmProjects\Site\templates" />
+      <recent name="C:\Users\gta\PycharmProjects\Site\templates\te" />
+      <recent name="C:\Users\gta\PycharmProjects\Site\db\tst" />
       <recent name="C:\Users\gta\PycharmProjects\Site" />
       <recent name="C:\Users\gta\PycharmProjects\Site\templates\main" />
-      <recent name="C:\Users\gta\PycharmProjects\Site\templates\main\product" />
     </key>
   </component>
   <component name="RunManager" selected="Python.server (1)">
@@ -292,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746808692535</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix(без корзины)">
+      <option name="closed" value="true" />
+      <created>1746809243832</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1746809243832</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -316,6 +338,7 @@
     <MESSAGE value="регестрация и вход пользователя в аккаунт,а также его страничка профиля" />
     <MESSAGE value="другая база данных и небольшие правки" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="fix(без корзины)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(без корзины)" />
   </component>
 </project>

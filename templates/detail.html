@@ -21,7 +21,12 @@
                     {% endif %}</h3>
             <h3>Category: {{ product.category }}</h3>
             <h3>about:<br> {{ product.description }}</h3>
-            <a href="https://t.me/teslanambaone" class="cart-btn d-flex align-items-center justify-content-center" target="_blank">Написать менеджеру</a>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('add_to_cart', item_id=product.id) }}" class="cart-btn d-flex align-items-center justify-content-center">Add to cart</a>
+            {% else %}
+                <a href="{{ url_for('login') }}" class="cart-btn d-flex align-items-center justify-content-center">Войдите, чтобы добавить в корзину</a>
+            {% endif %}
+
         </div>
     </div>
 {% endblock content %}

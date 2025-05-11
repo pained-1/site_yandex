@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}Корзина{% endblock %}
+
+{% block content %}
+<div class="cart-container">
+    <h1 class="cart-title">Ваша корзина</h1>
+
+    {% if not cart %}
+    <div class="empty-cart">
+        <p>Ваша корзина пуста</p>
+        <a href="{{ url_for('shop') }}" class="continue-shopping-btn">Продолжить покупки</a>
+    </div>
+    {% else %}
+    <div class="cart-items">
+        <div class="cart-header">
+            <div class="header-item product-info">Товар</div>
+            <div class="header-item price">Цена</div>
+            <div class="header-item quantity">Количество</div>
+            <div class="header-item actions"></div>
+        </div>
+
+        {% for item in cart %}
+        <div class="cart-item">
+            <div class="product-info">
+                <img src="{{ url_for('get_work_image', work_id=item.product.id) }}"
+                     alt="{{ item.product.title }}"
+                     class="product-image">
+                <div class="product-details">
+                    <h3>{{ item.product.title }}</h3>
+                    <p class="category">{{ item.product.category }}</p>
+                </div>
+            </div>
+
+            <div class="price">
+                {% if item.product.discount != 0 %}
+                <div class="price-container">
+                    <p class="original-price">{{ item.product.price }} Руб</p>
+                    <p class="discounted-price">{{ item.product.price | price_discount(item.product.discount) }} руб</p>
+                </div>
+                {% else %}
+                <p class="cart-price">{{ item.product.price }} Руб</p>
+                {% endif %}
+            </div>
+
+            <div class="quantity">
+                <div class="quantity-container">
+                    <form action="{{ url_for('update_cart', item_id=item.id) }}" method="post">
+                        <input type="hidden" name="action" value="decrease">
+                        <button type="submit" class="quantity-btn">-</button>
+                    </form>
+                    <span class="quantity-value">{{ item.quantity }}</span>
+                    <form action="{{ url_for('update_cart', item_id=item.id) }}" method="post">
+                        <input type="hidden" name="action" value="increase">
+                        <button type="submit" class="quantity-btn">+</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="actions">
+                <form action="{{ url_for('remove_from_cart', item_id=item.id) }}" method="post">
+                    <button type="submit" class="remove-btn">
+                        <span>Удалить</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="cart-summary">
+        <div class="summary-row total">
+            <span>Итого:</span>
+            <span>{{ total }} руб</span>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
