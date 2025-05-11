@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Наш CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-    
+
     {% block styles %}{% endblock %}
 </head>
 <body>
@@ -39,7 +39,7 @@
                 </ul>
             </navbar>
             <div class="header-logo">
-                <a href="/"></a>
+                <a href="/"><img src="{{ url_for('static', filename='img/icon.jpg') }}" class="icon" alt=""></a>
             </div>
             <div class="header-profile d-flex gap-2 align-items-start">
                 {% if current_user.is_authenticated %}

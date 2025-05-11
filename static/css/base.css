@@ -340,6 +340,11 @@ input:focus {
     height: 35px;
     margin-right: 10px;
 }
+.icon {
+    width: 100px;
+    height: 80px;
+    margin-right: 10px;
+}
 
 .cart-quantity {
     position: absolute;
@@ -1119,4 +1124,21 @@ input:focus {
     width: 100%;
     float: none;
 }
+}
+.cart-final {
+    padding: 60px 1200px;
+    display: flex;
+    position: absolute;
+    top: 1;
+}
+.cart-final span {
+    font-size: 20px; /* Уменьшаем размер текста */
+    line-height: 1;
+    padding: 4px 8px; /* Небольшие отступы для текста */
+    border-radius: 3px; /* Скругление углов текстового блока */
+    transition: background-color 0.2s;
+}
+
+.cart-final span {
+    background-color: #f5f5f5; /* Эффект при наведении */
 }
