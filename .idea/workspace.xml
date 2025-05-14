@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="Добавленна возможность добавление/редактирование/удаление товаров!">
+    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/blogs.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/blogs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -336,7 +330,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747258495933</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fix">
+      <option name="closed" value="true" />
+      <created>1747262250950</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1747262250950</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -359,12 +361,12 @@
     <MESSAGE value="сделанна скидка товаров" />
     <MESSAGE value="регестрация и вход пользователя в аккаунт,а также его страничка профиля" />
     <MESSAGE value="другая база данных и небольшие правки" />
-    <MESSAGE value="fix" />
     <MESSAGE value="fix(без корзины)" />
     <MESSAGE value="сделана корзина и fix" />
     <MESSAGE value="micro fix" />
     <MESSAGE value="презентация" />
     <MESSAGE value="Добавленна возможность добавление/редактирование/удаление товаров!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавленна возможность добавление/редактирование/удаление товаров!" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
 </project>
