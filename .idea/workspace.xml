@@ -4,23 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="презентация">
-      <change afterPath="$PROJECT_DIR$/templates/admin.html" afterDir="false" />
+    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="Добавленна возможность добавление/редактирование/удаление товаров!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/__all_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/__all_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/blogs.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/blogs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/tst/blogs.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/tst/blogs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/tst/old/blogs.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/tst/old/blogs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -337,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746976401822</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Добавленна возможность добавление/редактирование/удаление товаров!">
+      <option name="closed" value="true" />
+      <created>1747258495933</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1747258495933</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -365,6 +364,7 @@
     <MESSAGE value="сделана корзина и fix" />
     <MESSAGE value="micro fix" />
     <MESSAGE value="презентация" />
-    <option name="LAST_COMMIT_MESSAGE" value="презентация" />
+    <MESSAGE value="Добавленна возможность добавление/редактирование/удаление товаров!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавленна возможность добавление/редактирование/удаление товаров!" />
   </component>
 </project>

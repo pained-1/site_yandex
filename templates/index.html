@@ -8,13 +8,13 @@
         <div class="home-title d-flex flex-column align-items-center">
             <a href="/shop" class="home-btn mt-4">ALL PRODUCTS</a>
         </div>
-        <div class="home-recomendation">
+        <div class="home-recomendation text-center">
             <div class="rec-title mb-4">
                 <h3><span>Popular Products<span></h3>
             </div>
         </div>
         <div class="home-card">
-    <div class="home-cards d-flex gap-4 ">
+    <div class="home-cards d-flex flex-wrap gap-4">
             {% for product in products %}
                 {% if product.is_popular == 1 %}
                     <a href="{{ url_for('product_card', name=product.title) }}" class="home-card">
@@ -26,7 +26,7 @@
                     </div>
                     <h5 class="title-card">{{ product.title }}</h5><br>
                     <h5>{% if product.discount != 0 %}
-                        <div class="cart-discount d-flex gap-2">
+                        <div class="cart-discount d-flex justify-content-center gap-2">
                             <p class="line">{{ product.price }} Руб</p>
                             <p>{{ product.price | price_discount(product.discount) }} руб</p>
                         </div>

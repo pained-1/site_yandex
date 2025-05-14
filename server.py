@@ -23,6 +23,7 @@ app = Flask(__name__, static_folder='static')
 optional = OptionalRoutes(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024
 db = SQLAlchemy()
 db.init_app(app)
 bootstrap = Bootstrap(app)

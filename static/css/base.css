@@ -95,6 +95,9 @@ input:focus {
 
 .header {
     height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background-color: #fff;
     box-shadow: var(--box-shadow);
 }
@@ -135,6 +138,7 @@ input:focus {
 
 .home-cards {
    width: 650px;
+   flex-wrap: wrap;
    overflow-x: hidden;
 }
 
@@ -195,33 +199,38 @@ input:focus {
     top: -16%;
 }
 
+.frame1, .frame2, .frame3, .frame4 {
+    position: fixed;
+    width: 150px;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* правый верхний угол - нормальная ориентация */
 .frame1 {
+    top: 80px;
+    right: 0;
 
-    position: absolute;
-    right: -0.5%;
-    bottom: 60%;
-    z-index: -1;
 }
 
+/* левый верхний угол - зеркальное отражение */
 .frame2 {
-    position: absolute;
-    left: -0.5%;
-    bottom: 60%;
-    z-index: -1;
+    top: 80px;
+    left: 0;
+
 }
 
+/* Левый нижний угол */
 .frame3 {
-    position: absolute;
-    left: -0.3%;
-    top: 73.4%;
-    z-index: -1;
+    bottom: 0;
+    left: 0;
 }
 
+/* Правый нижний угол */
 .frame4 {
-    position: absolute;
-    right: -0.3%;
-    top: 73.4%;
-    z-index: -1;
+    bottom: 0;
+    right: 0;
 }
 
 .logogothic {
@@ -308,10 +317,12 @@ input:focus {
 
 .sidebar {
     margin-top: 70px;
+    z-index: 10;
 }
 
 .llist {
     margin-left: -80px;
+    z-index: 10;
 }
 
 .sidebar ul li {
@@ -340,6 +351,7 @@ input:focus {
     width: 35px;
     height: 35px;
     margin-right: 10px;
+    margin-top: 8px;
 }
 .icon {
     width: 100px;
