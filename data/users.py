@@ -20,6 +20,7 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
     money = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
     total_spent = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
     modified_date = sqlalchemy.Column(sqlalchemy.DateTime)
+    admin = sqlalchemy.Column(sqlalchemy.Boolean, default=False)
     news = orm.relationship("Product", back_populates='user')
 
     def set_password(self, password):

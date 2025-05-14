@@ -38,6 +38,9 @@
 
         <div class="form-actions">
             <a href="{{ url_for('logout') }}" class="logout-btn">Выйти</a>
+            {% if user.id == 1 %}
+                <a href="{{ url_for('admin') }}" class="logout-btn">Админ-панель</a>
+            {% endif %}
         </div>
     </div>
 </div>

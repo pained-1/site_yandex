@@ -10,6 +10,7 @@ from flask_restful import reqparse, abort, Api, Resource
 from flask import Flask
 
 app = Flask(__name__)
+
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 

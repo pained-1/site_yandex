@@ -15,7 +15,7 @@ class Product(SqlAlchemyBase,SerializerMixin):
     price = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
     category = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     description = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    discount = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
+    discount = sqlalchemy.Column(sqlalchemy.Integer, nullable=True, default=0)
     created_date = sqlalchemy.Column(sqlalchemy.DateTime,
                                      default=datetime.datetime.now)
     quantity = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
@@ -23,7 +23,7 @@ class Product(SqlAlchemyBase,SerializerMixin):
     image = sqlalchemy.Column(sqlalchemy.BLOB, nullable=True)
 
     user_id = sqlalchemy.Column(sqlalchemy.Integer,
-                                sqlalchemy.ForeignKey("users.id"))
+                                sqlalchemy.ForeignKey("users.id"),nullable=True)
     # news = orm.relationship("News", back_populates='user')
     user = orm.relationship('User')
     categories = orm.relationship("Category",

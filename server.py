@@ -14,8 +14,10 @@ import sqlite3
 from flask_paginate import Pagination, get_page_parameter
 import io
 import imghdr
+from sklearn.datasets import make_blobs
 from flask_optional_routes import OptionalRoutes
 from forms.user import RegisterForm
+from forms.product import ProductForm
 
 app = Flask(__name__, static_folder='static')
 optional = OptionalRoutes(app)
@@ -75,18 +77,19 @@ def get_work_image(work_id):
 def product_card(name):
     db_sess = db_session.create_session()
     product = db_sess.query(Product).filter(Product.title == name).first()
+    user = db_sess.query(User)
     db_sess.close()
 
     if not product:
         abort(404)  # Вернёт 404 если товар не найден
     db_sess.close()
-    return render_template('detail.html', product=product)
+    return render_template('detail.html', product=product, user=current_user)
 
 
 @optional.routes('/shop/<category_slug>?/')
 def shop(category_slug=None):
-    # page = request.args.get('page', type=int, default=1)
-    # per_page = 12
+    page = request.args.get('page', type=int, default=1)
+    per_page = 12
     db_sess = db_session.create_session()
     categories = db_sess.query(Product.category).all()
     categories_list = [name[0] for name in categories]
@@ -256,10 +259,120 @@ def remove_from_cart(item_id):
     if cart_item:
         db_sess.delete(cart_item)
         db_sess.commit()
-        flash('Товар удален из корзины', 'success')
+        flash('Товар удален из корзины', 'error')
 
     db_sess.close()
     return redirect(url_for('cart'))
+
+
+@app.route('/add_product', methods=['GET', 'POST'])
+@login_required
+def add_product():
+    form = ProductForm()
+    db_sess = db_session.create_session()
+    user = db_sess.query(User).filter_by(id=current_user.id).first()
+    db_sess.close()
+    if not user.admin:
+        flash('Вы не Админ, товар не будет добавлен', 'error')
+        return redirect('/')
+    if form.validate_on_submit():
+        db_sess = db_session.create_session()
+        produc = Product()
+        produc.title = form.title.data
+        if db_sess.query(Product).filter(Product.title == form.title.data).first():
+            return render_template('produc.html', title='Добавление товара',
+                                   form=form,
+                                   message="Такое название уже есть")
+        produc.price = form.price.data
+        produc.is_popular = form.is_popular.data
+        produc.quantity = form.quantity.data
+        produc.description = form.description.data
+        produc.category = form.category.data
+        produc.user_id = current_user.id
+        f = request.files['file']
+        produc.image = f.read()
+        db_sess.add(produc)
+        db_sess.commit()
+
+        return redirect('/')
+
+    return render_template('produc.html', title='Добавление товара',
+                           form=form)
+
+
+@app.route('/admin')
+def admin():
+    db_sess = db_session.create_session()
+    user = db_sess.query(User).filter_by(id=current_user.id).first()
+    db_sess.close()
+    print(user.admin)
+    if not user.admin:
+        flash('Вы не Админ', 'error')
+        return redirect('/')
+    return render_template('admin.html')
+
+
+@app.route('/delete_product/<int:item_id>')
+@login_required
+def delete_product(item_id):
+    db_sess = db_session.create_session()
+    product = db_sess.query(Product).filter(Product.id == item_id).first()
+    user = db_sess.query(User).filter_by(id=current_user.id).first()
+    if product and user.admin:
+        db_sess.delete(product)
+        db_sess.commit()
+    else:
+        abort(404)
+    db_sess.close()
+    return redirect('/shop')
+
+
+@app.route('/product_edit/<int:id>', methods=['GET', 'POST'])
+@login_required
+def edit_news(id):
+    form = ProductForm()
+    db_sess = db_session.create_session()
+    user = db_sess.query(User).filter_by(id=current_user.id).first()
+    db_sess.close()
+    if not user.admin:
+        flash('Вы не Админ, вы не можете редактировать товар', 'error')
+        return redirect('/')
+    if request.method == "GET":
+        db_sess = db_session.create_session()
+        product = db_sess.query(Product).filter(Product.id == id).first()
+        if product:
+            form.title.data = product.title
+            form.price.data = product.price
+            form.category.data = product.category
+            form.discount.data = product.discount
+            form.description.data = product.description
+            form.quantity.data = product.quantity
+            form.is_popular.data = product.is_popular
+
+        else:
+            abort(404)
+    if form.validate_on_submit():
+        db_sess = db_session.create_session()
+        produc = db_sess.query(Product).filter(Product.id == id).first()
+        if produc:
+            produc.title = form.title.data
+            produc.price = form.price.data
+            produc.discount = form.discount.data
+            produc.category = form.category.data
+            produc.description = form.description.data
+            produc.quantity = form.quantity.data
+            produc.is_popular = form.is_popular.data
+            f = request.files['file']
+            if f:
+                produc.image = f.read()
+            db_sess.commit()
+            return redirect('/')
+        else:
+            abort(404)
+    return render_template('produc.html',
+                           title='Редактирование товара',
+                           form=form
+                           )
 
 
 if __name__ == '__main__':

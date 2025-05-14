@@ -196,6 +196,7 @@ input:focus {
 }
 
 .frame1 {
+
     position: absolute;
     right: -0.5%;
     bottom: 60%;
@@ -1142,3 +1143,11 @@ input:focus {
 .cart-final span {
     background-color: #f5f5f5; /* Эффект при наведении */
 }
+.flash.error {
+         border: 1px solid #FF4343;
+         background: #FF9C9C;
+         background-color: #ff0000;
+}
+.error-message {
+    color: #ff0000;
+    }
