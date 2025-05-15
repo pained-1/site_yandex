@@ -78,7 +78,6 @@ def get_work_image(work_id):
 def product_card(name):
     db_sess = db_session.create_session()
     product = db_sess.query(Product).filter(Product.title == name).first()
-    user = db_sess.query(User)
     db_sess.close()
 
     if not product:
@@ -217,7 +216,8 @@ def cart():
     cart = db_sess.query(Cart).filter(Cart.customer_link == current_user.id).all()
     amount = 0
     for item in cart:
-        amount += price_discount_filter(item.product.price, item.product.discount) * item.quantity
+        if type(price_discount_filter(item.product.price, item.product.discount)) == (float or int):
+            amount += price_discount_filter(item.product.price, item.product.discount) * item.quantity
     db_sess.close()
     return render_template('cart.html', cart=cart, amount=amount, total=amount)
 
@@ -318,9 +318,12 @@ def admin():
 def delete_product(item_id):
     db_sess = db_session.create_session()
     product = db_sess.query(Product).filter(Product.id == item_id).first()
+    cart = db_sess.query(Cart).filter(Cart.product_link == item_id).first()
     user = db_sess.query(User).filter_by(id=current_user.id).first()
     if product and user.admin:
         db_sess.delete(product)
+        if cart:
+            db_sess.delete(cart)
         db_sess.commit()
     else:
         abort(404)
