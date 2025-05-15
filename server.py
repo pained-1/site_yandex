@@ -216,7 +216,7 @@ def cart():
     cart = db_sess.query(Cart).filter(Cart.customer_link == current_user.id).all()
     amount = 0
     for item in cart:
-        if type(price_discount_filter(item.product.price, item.product.discount)) == (float or int):
+        if type(price_discount_filter(item.product.price, item.product.discount)) == float or int:
             amount += price_discount_filter(item.product.price, item.product.discount) * item.quantity
     db_sess.close()
     return render_template('cart.html', cart=cart, amount=amount, total=amount)
