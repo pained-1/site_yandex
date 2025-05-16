@@ -379,6 +379,11 @@ def edit_news(id):
                            )
 
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     db_session.global_init('db/blogs.db')
