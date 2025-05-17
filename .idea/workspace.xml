@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="fix bags1">
-      <change afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
+    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/blogs.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/blogs.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/castle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/heavyauranonfone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/hh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/logogot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/logogothic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/qwewqe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/window.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/wycca-queen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -414,7 +406,23 @@
       <option name="project" value="LOCAL" />
       <updated>1747314694306</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="всплывающее панелька и страница about">
+      <option name="closed" value="true" />
+      <created>1747437316291</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1747437316291</updated>
+    </task>
+    <task id="LOCAL-00026" summary="fix">
+      <option name="closed" value="true" />
+      <created>1747437427579</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1747437427579</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -442,11 +450,12 @@
     <MESSAGE value="micro fix" />
     <MESSAGE value="презентация" />
     <MESSAGE value="Добавленна возможность добавление/редактирование/удаление товаров!" />
-    <MESSAGE value="fix" />
     <MESSAGE value="glitch test" />
     <MESSAGE value="glitch test1" />
     <MESSAGE value="fix bags" />
     <MESSAGE value="fix bags1" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bags1" />
+    <MESSAGE value="всплывающее панелька и страница about" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
 </project>

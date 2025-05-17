@@ -88,8 +88,9 @@ def product_card(name):
 
 @optional.routes('/shop/<category_slug>?/')
 def shop(category_slug=None):
-    page = request.args.get('page', type=int, default=1)
-    per_page = 12
+    per_page = 10
+    page = request.args.get('page', 1, type=int)
+    print(page)
     db_sess = db_session.create_session()
     categories = db_sess.query(Product.category).all()
     categories_list = [name[0] for name in categories]
@@ -100,9 +101,23 @@ def shop(category_slug=None):
         products_query = db_sess.query(Product).filter(Product.category == category_slug)
     else:
         products_query = db_sess.query(Product)
-    # pages = db_sess.query(Product).paginate(page=page, per_page=1)
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    total = products_query.count()
+    offset = (page - 1) * per_page
+    products = products_query.offset(offset).limit(per_page).all()
+    total_pages = (total + per_page - 1) // per_page
     db_sess.close()
-    return render_template('list.html', category=category_slug, categories=all_categories, products=products_query)
+    return render_template('list.html', category=category_slug, categories=all_categories, products=products,
+                           pagination={
+                               'page': page,
+                               'per_page': per_page,
+                               'total': total,
+                               'total_pages': total_pages,
+                               'has_prev': page > 1,
+                               'has_next': page < total_pages,
+                               'prev_num': page - 1,
+                               'next_num': page + 1
+                           })
 
 
 @app.route('/register', methods=['GET', 'POST'])
