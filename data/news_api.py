@@ -12,11 +12,13 @@ blueprint = flask.Blueprint(
 app = Flask(__name__)
 api = Api(app)
 
+
 def abort_if_news_not_found(news_id):
     session = db_session.create_session()
     work = session.query(Product).get(news_id)
     if not work:
         abort(404, message=f"News {news_id} not found")
+
 
 class NewsResource(Resource):
     def get(self, work_id):
@@ -34,12 +36,14 @@ class NewsResource(Resource):
         session.commit()
         return jsonify({'success': 'OK'})
 
+
 parser = reqparse.RequestParser()
 parser.add_argument('title', required=True)
 parser.add_argument('content', required=True)
 parser.add_argument('is_private', required=True, type=bool)
 parser.add_argument('is_published', required=True, type=bool)
 parser.add_argument('user_id', required=True, type=int)
+
 
 class NewsListResource(Resource):
     def get(self):
@@ -61,6 +65,8 @@ class NewsListResource(Resource):
         session.add(work)
         session.commit()
         return jsonify({'id': work.id})
+
+
 # @blueprint.route('/api/news')
 # def get_news():
 #     db_sess = db_session.create_session()
@@ -148,6 +154,3 @@ def redact_news(news_id):
     db_sess.delete(work)
     db_sess.commit()
     return jsonify({'success': 'OK'})
-
-
-

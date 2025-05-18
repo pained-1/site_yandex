@@ -1,78 +1,81 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Shop
+Shop
 {% endblock title %}
 {% block content %}
-    <div class="llist d-flex">
-        <div class="sidebar">
-            <h3>Categories</h3>
-            <ul>
-                <li {% if not category %}class="selected"{% endif %}>
-                    <a href="{{ url_for('shop') }}">All</a>
-                </li>
-                {% for c in categories %}
-                    <li {% if category == c %}class="selected"{% endif %}>
-                        <a href="{{ url_for('shop', category_slug=c) }}">{{ c }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="main">
-            <div class="main-title">
-                {% if category %}{{ category }}{% else %}Products{% endif %}
-            </div>
-            <div class="product-list">
-                <div class="items">
-                    {% for product in products %}
-                        <div class="item">
-                            <a href="{{ url_for('product_card', name=product.title) }}" class="home-card d-flex flex-column align-items-center text-center">
-                                <img src="{{ url_for('get_work_image', work_id=product.id) }}" class="card-img" alt="">
-                                <h5 class="title-card">{{ product.title }}</h5>
-                                <h5>{% if product.discount != 0 %}
-                        <div class="cart-discount d-flex gap-2">
-                            <p class="line">{{ product.price }} Руб</p>
-                            <p>{{ product.price | price_discount(product.discount) }} руб</p>
-                        </div>
-                    {% else %}
-                        <p class="cart-discount">{{ product.price }} Руб</p>
-                    {% endif %}</h5>
-                            </a>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center mt-4">
-                {% if pagination.has_prev %}
-                <li class="page-item">
-                    <a class="page-link" href="{{ url_for('shop', category_slug=category, page=pagination.prev_num) }}">Previous</a>
-                </li>
-                {% else %}
-                <li class="page-item disabled">
-                    <span class="page-link">Previous</span>
-                </li>
-                {% endif %}
-
-                {% for page_num in range(1, pagination.total_pages + 1) %}
-                <li class="page-item {% if page_num == pagination.page %}active{% endif %}">
-                    <a class="page-link" href="{{ url_for('shop', category_slug=category, page=page_num) }}">
-                        {{ page_num }}
-                    </a>
-                </li>
-                {% endfor %}
-
-                {% if pagination.has_next %}
-                <li class="page-item">
-                    <a class="page-link" href="{{ url_for('shop', category_slug=category, page=pagination.next_num) }}">Next</a>
-                </li>
-                {% else %}
-                <li class="page-item disabled">
-                    <span class="page-link">Next</span>
-                </li>
-                {% endif %}
-            </ul>
-        </nav>
+<div class="llist d-flex">
+    <div class="sidebar">
+        <h3>Categories</h3>
+        <ul>
+            <li {% if not category %}class="selected" {% endif %}>
+                <a href="{{ url_for('shop') }}">All</a>
+            </li>
+            {% for c in categories %}
+            <li {% if category== c %}class="selected" {% endif %}>
+                <a href="{{ url_for('shop', category_slug=c) }}">{{ c }}</a>
+            </li>
+            {% endfor %}
+        </ul>
     </div>
+    <div class="main">
+        <div class="main-title">
+            {% if category %}{{ category }}{% else %}Products{% endif %}
+        </div>
+        <div class="product-list">
+            <div class="items">
+                {% for product in products %}
+                <div class="item">
+                    <a href="{{ url_for('product_card', name=product.title) }}"
+                       class="home-card d-flex flex-column align-items-center text-center">
+                        <img src="{{ url_for('get_work_image', work_id=product.id) }}" class="card-img" alt="">
+                        <h5 class="title-card">{{ product.title }}</h5>
+                        <h5>{% if product.discount != 0 %}
+                            <div class="cart-discount d-flex gap-2">
+                                <p class="line">{{ product.price }} Руб</p>
+                                <p>{{ product.price | price_discount(product.discount) }} руб</p>
+                            </div>
+                            {% else %}
+                            <p class="cart-discount">{{ product.price }} Руб</p>
+                            {% endif %}
+                        </h5>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center mt-4">
+            {% if pagination.has_prev %}
+            <li class="page-item">
+                <a class="page-link" href="{{ url_for('shop', category_slug=category, page=pagination.prev_num) }}">Previous</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <span class="page-link">Previous</span>
+            </li>
+            {% endif %}
+
+            {% for page_num in range(1, pagination.total_pages + 1) %}
+            <li class="page-item {% if page_num == pagination.page %}active{% endif %}">
+                <a class="page-link" href="{{ url_for('shop', category_slug=category, page=page_num) }}">
+                    {{ page_num }}
+                </a>
+            </li>
+            {% endfor %}
+
+            {% if pagination.has_next %}
+            <li class="page-item">
+                <a class="page-link"
+                   href="{{ url_for('shop', category_slug=category, page=pagination.next_num) }}">Next</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <span class="page-link">Next</span>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
 {% endblock content %}

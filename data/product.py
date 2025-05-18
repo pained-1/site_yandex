@@ -6,7 +6,7 @@ from sqlalchemy_serializer import SerializerMixin
 from .db_session import SqlAlchemyBase
 
 
-class Product(SqlAlchemyBase,SerializerMixin):
+class Product(SqlAlchemyBase, SerializerMixin):
     __tablename__ = 'products'
 
     id = sqlalchemy.Column(sqlalchemy.Integer,
@@ -23,7 +23,7 @@ class Product(SqlAlchemyBase,SerializerMixin):
     image = sqlalchemy.Column(sqlalchemy.BLOB, nullable=True)
 
     user_id = sqlalchemy.Column(sqlalchemy.Integer,
-                                sqlalchemy.ForeignKey("users.id"),nullable=True)
+                                sqlalchemy.ForeignKey("users.id"), nullable=True)
     # news = orm.relationship("News", back_populates='user')
     user = orm.relationship('User')
     categories = orm.relationship("Category",

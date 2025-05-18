@@ -88,9 +88,6 @@ def product_card(name):
 
 @optional.routes('/shop/<category_slug>?/')
 def shop(category_slug=None):
-    per_page = 10
-    page = request.args.get('page', 1, type=int)
-    print(page)
     db_sess = db_session.create_session()
     categories = db_sess.query(Product.category).all()
     categories_list = [name[0] for name in categories]
@@ -102,6 +99,7 @@ def shop(category_slug=None):
     else:
         products_query = db_sess.query(Product)
     page = request.args.get(get_page_parameter(), type=int, default=1)
+    per_page = 10
     total = products_query.count()
     offset = (page - 1) * per_page
     products = products_query.offset(offset).limit(per_page).all()
