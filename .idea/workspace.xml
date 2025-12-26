@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="PAGINATION">
+    <list default="true" id="0b6d959b-50fc-41aa-aaf5-4f47afec8d47" name="Changes" comment="fix and maybe finish(1)?">
+      <change afterPath="$PROJECT_DIR$/../sait/pythonProject/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sait/pythonProject/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sait/pythonProject/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sait/pythonProject/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sait/pythonProject/.idea/pythonProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sait/pythonProject/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sait/pythonProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Site.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Site.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/IPython/core/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/IPython/core/application.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/IPython/core/compilerop.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/IPython/core/compilerop.py" afterDir="false" />
@@ -47,6 +57,8 @@
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/defusedxml/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/defusedxml/common.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/flask-3.1.0.dist-info/INSTALLER" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/flask-3.1.0.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/flask/ctx.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/flask/ctx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/flask/templating.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/flask/templating.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/flask/testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/flask/testing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/ipython-8.12.3.dist-info/top_level.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/numpy/__config__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/numpy/__config__.py" afterDir="false" />
@@ -54,6 +66,29 @@
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/numpy/random/_bounded_integers.cp312-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/numpy/random/_bounded_integers.cp312-win_amd64.pyd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/numpy/random/_pcg64.cp312-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/numpy/random/_pcg64.cp312-win_amd64.pyd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/numpy/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/numpy/version.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/cli/autocompletion.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/cli/autocompletion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/cli/cmdoptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/cli/cmdoptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/cli/main_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/cli/main_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/cli/spinners.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/cli/spinners.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/distributions/sdist.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/distributions/sdist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/metadata/importlib/_dists.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/metadata/importlib/_dists.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/models/format_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/models/format_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/models/selection_prefs.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/models/selection_prefs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/req/constructors.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/req/constructors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/req/req_install.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/req/req_install.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/req/req_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/req/req_set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/resolution/legacy/resolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/resolution/legacy/resolver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/utils/hashes.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/utils/hashes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/utils/unpacking.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/utils/unpacking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/utils/virtualenv.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/utils/virtualenv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/vcs/git.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/vcs/git.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/vcs/subversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_internal/vcs/subversion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_vendor/distlib/wheel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_vendor/requests/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_vendor/requests/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_vendor/rich/box.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_vendor/rich/box.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_vendor/rich/live_render.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_vendor/rich/live_render.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_vendor/rich/panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_vendor/rich/panel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_vendor/tomli/_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/pip/_vendor/tomli/_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pkg_resources/_vendor/importlib_resources/_adapters.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pkg_resources/_vendor/importlib_resources/_common.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pkg_resources/_vendor/more_itertools/py.typed" beforeDir="false" />
@@ -61,6 +96,7 @@
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pkg_resources/_vendor/packaging/_tokenizer.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pkg_resources/_vendor/packaging/specifiers.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pkg_resources/extern/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/psycopg2/pool.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/psycopg2/pool.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pytz-2024.2.dist-info/LICENSE.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pytz-2024.2.dist-info/METADATA" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pytz-2024.2.dist-info/RECORD" beforeDir="false" />
@@ -165,6 +201,7 @@
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/sklearn/utils/tests/test_optimize.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/sklearn/utils/tests/test_optimize.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/sklearn/utils/tests/test_pprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/sklearn/utils/tests/test_pprint.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/cyextension/util.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/cyextension/util.pyx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/dialects/_typing.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/dialects/_typing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/dialects/mssql/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/dialects/mssql/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/dialects/mysql/asyncmy.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/dialects/mysql/asyncmy.py" afterDir="false" />
@@ -198,6 +235,10 @@
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/testing/suite/test_ddl.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/testing/suite/test_ddl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/util/_collections.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/util/_collections.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/util/deprecations.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy/util/deprecations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy_serializer-1.4.22.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlalchemy_serializer-1.4.22.dist-info/REQUESTED" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlparse-0.5.3.dist-info/licenses/AUTHORS" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlparse/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/sqlparse/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/tornado-6.4.2.dist-info/RECORD" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/tornado-6.4.2.dist-info/WHEEL" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/tornado-6.4.2.dist-info/top_level.txt" beforeDir="false" />
@@ -208,6 +249,14 @@
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/tornado/tcpclient.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/tornado/tcpclient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/tornado/test/process_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/tornado/test/process_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/tornado/websocket.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/tornado/websocket.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug-3.1.3.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug/datastructures/cache_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug/datastructures/cache_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug/datastructures/headers.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug/datastructures/headers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug/datastructures/mixins.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug/datastructures/mixins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug/sansio/multipart.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug/sansio/multipart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug/security.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug/serving.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug/serving.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug/wrappers/request.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/werkzeug/wrappers/request.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/yarg-0.1.9.dist-info/INSTALLER" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/yarg-0.1.9.dist-info/WHEEL" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/yarg-0.1.9.dist-info/top_level.txt" beforeDir="false" />
@@ -217,43 +266,23 @@
       <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/yarg/release.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/yarg/release.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Scripts/f2py.exe" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/f2py.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Scripts/ipython.exe" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/ipython.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/__all_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/__all_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/db_session.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/db_session.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/jobs.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/jobs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/news_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/news_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/blogs.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/blogs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/tst/blogs.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/tst/blogs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/Без имени-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/Без имени-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/produc.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/produc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -269,23 +298,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.product.executor&quot;: &quot;Run&quot;,
-    &quot;Python.server (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.server.executor&quot;: &quot;Run&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.main (1).executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.product.executor": "Run",
+    "Python.server (1).executor": "Run",
+    "Python.server.executor": "Run",
+    "Python.update_packet.executor": "Run",
+    "last_opened_file_path": "C:/Users/gta/PycharmProjects/sait"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gta\PycharmProjects\Site\instance" />
       <recent name="C:\Users\gta\PycharmProjects\Site\templates" />
       <recent name="C:\Users\gta\PycharmProjects\Site\templates\te" />
       <recent name="C:\Users\gta\PycharmProjects\Site\db\tst" />
       <recent name="C:\Users\gta\PycharmProjects\Site" />
-      <recent name="C:\Users\gta\PycharmProjects\Site\templates\main" />
     </key>
   </component>
   <component name="RunManager" selected="Python.server (1)">
@@ -303,28 +334,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Site" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\gta\PycharmProjects\Site\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -421,13 +430,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="update_packet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Site" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/update_packet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.server (1)" />
+        <item itemvalue="Python.update_packet" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.product" />
         <item itemvalue="Python.server (1)" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -663,7 +694,23 @@
       <option name="project" value="LOCAL" />
       <updated>1747441754072</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="fix and maybe finish?">
+      <option name="closed" value="true" />
+      <created>1747530166654</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1747530166654</updated>
+    </task>
+    <task id="LOCAL-00029" summary="fix and maybe finish(1)?">
+      <option name="closed" value="true" />
+      <created>1747530392191</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1747530392191</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -698,6 +745,8 @@
     <MESSAGE value="всплывающее панелька и страница about" />
     <MESSAGE value="fix" />
     <MESSAGE value="PAGINATION" />
-    <option name="LAST_COMMIT_MESSAGE" value="PAGINATION" />
+    <MESSAGE value="fix and maybe finish?" />
+    <MESSAGE value="fix and maybe finish(1)?" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix and maybe finish(1)?" />
   </component>
 </project>
